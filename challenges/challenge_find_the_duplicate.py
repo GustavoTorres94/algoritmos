@@ -1,14 +1,13 @@
 def find_duplicate(nums):
-    sorted_nums = sorted(nums)
-    if not isinstance(nums, list) or len(nums) == 1:
+    if not isinstance(nums, list) or len(nums) <= 1:
         return False
-    for i in range(len(sorted_nums)):
-        if not isinstance(sorted_nums[i], int):
+    set_numbers = set()
+    for num in nums:
+        if not isinstance(num, int) or num < 0:
             return False
-        if sorted_nums[i] < 0:
-            return False
-        if sorted_nums[i] == sorted_nums[i + 1]:
-            return print(sorted_nums[i])
+        if num in set_numbers:
+            return True
+        set_numbers.add(num)
     return False
 
 
