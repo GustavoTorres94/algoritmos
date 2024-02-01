@@ -13,7 +13,7 @@ def is_anagram(first_string, second_string):
     if not isinstance(first_string, str) or not isinstance(second_string, str):
         raise TypeError("As entradas devem ser strings")
 
-    if not first_string or not second_string:
+    if len(first_string) == 0 or len(second_string) == 0:
         return False
 
     str1_sorted = "".join(bubble_sort(list(first_string.lower())))
